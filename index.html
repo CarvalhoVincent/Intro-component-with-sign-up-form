@@ -22,15 +22,19 @@
       <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
     </main>
     <section class="grid-item3">
-      <form class="form">
+      <form class="form" onsubmit="return check()" novalidate>
         <label for="first-name">First Name</label>  
-        <input type="text" id="first-name" placeholder="First Name">
+        <input type="text" id="first-name" placeholder="First Name" required minlength="1">
+        <div id="fname-err" class="err-msg"></div>
         <label for="last-name">Last Name</label>
-        <input type="text" id="last-name" placeholder="Last Name">
+        <input type="text" id="last-name" placeholder="Last Name" required minlength="1">
+        <div id="lname-err" class="err-msg"></div>
         <label for="mail">Email Address</Address></label>
-        <input type="mail" id="mail" placeholder="Email Address"> 
+        <input type="mail" id="mail" placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <div id="mail-err" class="err-msg"></div> 
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="password" placeholder="Password" required minlength="1">
+        <div id="pwd-err" class="err-msg"></div>
         <label for="submit">Claim your free trial</label>
         <input type="submit" id="submit" value="Claim your free trial">
       </form>
@@ -45,5 +49,6 @@
       Coded by <a href="#">Vincent CARVALHO</a>.
     </p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
